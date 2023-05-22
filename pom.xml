@@ -9,7 +9,7 @@
     <version>1.0.0-8.3.0.28-1658</version>
 
     <properties>
-        <!-- 编译相关 -->
+        <!-- build -->
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,7 @@
         <spring-boot.version>2.7.10</spring-boot.version>
         <!-- Kettle -->
         <kettle.version>8.3.0.28-1658</kettle.version>
-        <!-- kettle 第三方依赖 -->
+        <!-- kettle third -->
         <pentaho-hadoop-shims-api.version>8.3.2022.09.00-1658</pentaho-hadoop-shims-api.version>
         <blueprints-core.version>2.6.0</blueprints-core.version>
         <kafka-clients.version>0.10.2.2</kafka-clients.version>
@@ -47,7 +47,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- kettle安全框架 -->
+        <!-- security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
@@ -80,7 +80,7 @@
             <artifactId>pentaho-hadoop-shims-api</artifactId>
             <version>${pentaho-hadoop-shims-api.version}</version>
         </dependency>
-        <!-- kettle 第三方所需依赖 -->
+        <!-- kettle third -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
@@ -144,7 +144,7 @@
             <version>${validation-api.version}</version>
         </dependency>
 
-        <!-- 测试相关 -->
+        <!-- test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

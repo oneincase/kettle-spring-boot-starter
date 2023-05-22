@@ -12,19 +12,19 @@ import java.util.Map;
 public class KettleProperties {
 
     /**
-     * 自定义 kettleHome路径
+     * custom kettle home root
      */
-    @NotBlank(message = "自定义kettleHome路径不能为空")
+    @NotBlank(message = "kettleHome not blank")
     private String homeRoot;
 
     /**
-     * 插件文件夹路劲 默认值为homeRoot/plugins
+     * custom plugins root default:homeRoot/plugins
      */
     private String pluginsRoot;
 
 
     /**
-     * kettle-properties配置
+     * kettle-properties options
      */
     private List<Map<String, String>> properties;
 
