@@ -1,5 +1,6 @@
 package io.github.oneincase.core;
 
+import io.github.oneincase.utils.BannerUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.pentaho.di.core.Const;
 import org.pentaho.di.core.KettleEnvironment;
@@ -12,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -38,14 +41,27 @@ public class KettleMain {
         KettleEnvironment.init(true); // kettle init
         logger.info("kettle run success");
         System.setProperty("usr.dir", useDir);
-        PluginRegistry pluginRegistry = PluginRegistry.getInstance();
-        logger.info("********************kettle plugins status********************");
-        List<Class<? extends PluginTypeInterface>> pluginTypes = pluginRegistry.getPluginTypes();
-        for (Class<? extends PluginTypeInterface> pluginType : pluginTypes) {
-            List<PluginInterface> plugins = pluginRegistry.getPlugins(pluginType);
-            logger.info("**" + pluginType.getSimpleName() + " size:" + plugins.size());
+        if (kettleProperties.getBanner()) {
+            InputStream resourceAsStream;
+            resourceAsStream = BannerUtil.class.getClassLoader().getResourceAsStream("kettle-banner.txt");
+            if (resourceAsStream != null) {
+                BannerUtil.showBanner(resourceAsStream);
+                try {
+                    resourceAsStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            PluginRegistry pluginRegistry = PluginRegistry.getInstance();
+            System.out.println("********************kettle plugins status********************");
+            List<Class<? extends PluginTypeInterface>> pluginTypes = pluginRegistry.getPluginTypes();
+            for (Class<? extends PluginTypeInterface> pluginType : pluginTypes) {
+                List<PluginInterface> plugins = pluginRegistry.getPlugins(pluginType);
+                System.out.println("**  " + pluginType.getSimpleName() + "  size: " + plugins.size());
+            }
+            System.out.println("*************************************************************");
         }
-        logger.info("*************************************************************");
+
     }
 
     /**
