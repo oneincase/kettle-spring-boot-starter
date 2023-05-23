@@ -22,6 +22,11 @@ public class KettleProperties {
      */
     private String pluginsRoot;
 
+    /**
+     * console banner
+     */
+    private Boolean banner = true;
+
 
     /**
      * kettle-properties options
@@ -50,6 +55,14 @@ public class KettleProperties {
 
     public void setProperties(List<Map<String, String>> properties) {
         this.properties = properties;
+    }
+
+    public Boolean getBanner() {
+        return banner;
+    }
+
+    public void setBanner(Boolean banner) {
+        this.banner = banner;
     }
 
 }
