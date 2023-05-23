@@ -39,7 +39,7 @@ public class KettleMain {
         String useDir = System.getProperty("user.dir");
         System.setProperty("user.dir", kettleProperties.getHomeRoot());
         KettleEnvironment.init(true); // kettle init
-        logger.info("kettle run success");
+        logger.info("kettle init success");
         System.setProperty("usr.dir", useDir);
         if (kettleProperties.getBanner()) {
             InputStream resourceAsStream;
@@ -53,13 +53,17 @@ public class KettleMain {
                 }
             }
             PluginRegistry pluginRegistry = PluginRegistry.getInstance();
-            System.out.println("********************kettle plugins status********************");
+            System.out.println("********************* kettle plugins status *********************");
             List<Class<? extends PluginTypeInterface>> pluginTypes = pluginRegistry.getPluginTypes();
+            System.out.printf("%-3s %-50s %-7s %-2s" + System.lineSeparator(),
+                    "** ", "plugin type", "size", "**");
+            System.out.println("*****************************************************************");
             for (Class<? extends PluginTypeInterface> pluginType : pluginTypes) {
                 List<PluginInterface> plugins = pluginRegistry.getPlugins(pluginType);
-                System.out.println("**  " + pluginType.getSimpleName() + "  size: " + plugins.size());
+                System.out.printf("%-3s %-50s %-7s %-2s" + System.lineSeparator(),
+                        "** ", pluginType.getSimpleName(), plugins.size(), "**");
             }
-            System.out.println("*************************************************************");
+            System.out.println("*****************************************************************");
         }
 
     }
