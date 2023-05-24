@@ -27,7 +27,6 @@ public class KettleProperties {
      */
     private Boolean banner = true;
 
-
     /**
      * kettle-properties options
      */

@@ -54,6 +54,7 @@ public class KettleAutoConfiguration {
      * RepositoryService
      */
     @Bean
+    @ConditionalOnBean(KettleMain.class)
     public RepositoryService repositoryService() {
         return new RepositoryServiceImpl();
     }
