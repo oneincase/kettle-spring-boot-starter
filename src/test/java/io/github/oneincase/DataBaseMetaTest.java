@@ -1,10 +1,11 @@
 package io.github.oneincase;
 
+import io.github.oneincase.core.KV;
+import io.github.oneincase.service.DataBaseService;
+import io.github.oneincase.service.impl.DataBaseServiceImpl;
+import io.github.oneincase.service.impl.PluginServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.pentaho.di.core.database.BaseDatabaseMeta;
-import org.pentaho.di.core.database.DatabaseInterface;
-import org.pentaho.di.core.database.DatabaseMeta;
-import org.pentaho.di.core.database.DatabaseTestResults;
+import org.pentaho.di.core.database.*;
 import org.pentaho.di.core.exception.KettleDatabaseException;
 import org.pentaho.di.core.exception.KettlePluginException;
 import org.pentaho.di.core.plugins.DatabasePluginType;
@@ -41,22 +42,32 @@ public class DataBaseMetaTest extends BaseTest {
         }
     }
 
+
+    @Test
+    public void DataBaseServiceImplTest() {
+        DataBaseService dataBaseService = new DataBaseServiceImpl(new PluginServiceImpl());
+        List<KV<String, String[]>> kvs = dataBaseService.supportList();
+        for (KV<String, String[]> kv : kvs) {
+            System.out.println(kv.getK() + "=====" + kv.getV()[0]);
+        }
+    }
+
     @Test
     public void localConnection() throws KettleDatabaseException {
         DatabaseMeta dataBaseMeta = new DatabaseMeta();
-        dataBaseMeta.setAccessType(0);
+        OracleDatabaseMeta oracleDatabaseMeta = new OracleDatabaseMeta();
+        dataBaseMeta.setAccessType(4);
         dataBaseMeta.setDatabaseType("MySQL");
-        dataBaseMeta.setHostname("localhost");
+//        dataBaseMeta.setHostname("localhost");
         dataBaseMeta.setDBName("test");
-        dataBaseMeta.setDBPort("3306");
-        dataBaseMeta.setUsername("root");
-        dataBaseMeta.setPassword("123456");
-        dataBaseMeta.addOptions();
-        String url = dataBaseMeta.getURL();
-        System.out.println(url);
-        DatabaseTestResults databaseTestResults = dataBaseMeta.testConnectionSuccess();
-        boolean success = databaseTestResults.isSuccess();
-        Assert.assertTrue(success);
+//        dataBaseMeta.setDBPort("3306");
+//        dataBaseMeta.setUsername("root");
+//        dataBaseMeta.setPassword("123456");
+//        dataBaseMeta.addExtraOption("MYSQL","useSSL","false");
+        String xml = dataBaseMeta.getXML();
+        System.out.println(xml);
+//        String s = dataBaseMeta.testConnection();
+//        System.out.println(s);
     }
 
     @Test

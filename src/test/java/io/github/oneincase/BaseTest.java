@@ -11,6 +11,7 @@ public class BaseTest {
     public static void init() throws KettleException {
         KettleProperties kettleProperties = new KettleProperties();
         kettleProperties.setHomeRoot("E:/apps/var/file-rep");
+        kettleProperties.setBanner(true);
         KettleMain kettleMain = new KettleMain(kettleProperties);
         kettleMain.run();
     }

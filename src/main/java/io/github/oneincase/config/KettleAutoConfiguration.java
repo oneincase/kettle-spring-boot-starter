@@ -10,7 +10,6 @@ import io.github.oneincase.service.impl.PluginServiceImpl;
 import io.github.oneincase.service.impl.RepositoryServiceImpl;
 import org.pentaho.di.core.exception.KettleException;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
@@ -25,7 +24,6 @@ public class KettleAutoConfiguration {
      * kettle init
      */
     @Bean
-    @ConditionalOnBean(KettleProperties.class)
     public KettleMain km(KettleProperties kettleProperties) throws KettleException {
         KettleMain kettleMain = new KettleMain(kettleProperties);
         kettleMain.run(); // 启动kettle
@@ -36,7 +34,6 @@ public class KettleAutoConfiguration {
      * PluginService
      */
     @Bean
-    @ConditionalOnBean(KettleMain.class)
     public PluginService pluginService() {
         return new PluginServiceImpl();
     }
@@ -45,7 +42,6 @@ public class KettleAutoConfiguration {
      * DataBaseService
      */
     @Bean
-    @ConditionalOnBean(PluginService.class)
     public DataBaseService dataBaseService(PluginService pluginService) {
         return new DataBaseServiceImpl(pluginService);
     }
@@ -54,7 +50,6 @@ public class KettleAutoConfiguration {
      * RepositoryService
      */
     @Bean
-    @ConditionalOnBean(KettleMain.class)
     public RepositoryService repositoryService() {
         return new RepositoryServiceImpl();
     }

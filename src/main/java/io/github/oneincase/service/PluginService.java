@@ -1,7 +1,6 @@
 package io.github.oneincase.service;
 
 import io.github.oneincase.core.KV;
-import org.pentaho.di.core.plugins.PluginRegistry;
 import org.pentaho.di.core.plugins.PluginTypeInterface;
 
 import java.util.List;
@@ -10,11 +9,6 @@ import java.util.List;
  * plugin service
  */
 public interface PluginService {
-
-    /**
-     * get plugin registry (singleton)
-     */
-    PluginRegistry pluginRegistryInstance();
 
     /**
      * description of type plugin list

@@ -11,20 +11,13 @@ import java.util.List;
 
 public class PluginServiceImpl implements PluginService {
 
-    /**
-     * get plugin registry (singleton)
-     */
-    @Override
-    public PluginRegistry pluginRegistryInstance() {
-        return PluginRegistry.getInstance();
-    }
+    private static final PluginRegistry pluginRegistry = PluginRegistry.getInstance();
 
     /**
      * description of type plugin list
      */
     @Override
     public List<KV<String, String>> pluginsDesc(Class<? extends PluginTypeInterface> type) {
-        PluginRegistry pluginRegistry = pluginRegistryInstance();
         List<PluginInterface> plugins = pluginRegistry.getPlugins(type);
         List<KV<String, String>> resList = new ArrayList<>();
         for (PluginInterface plugin : plugins) {
@@ -39,7 +32,6 @@ public class PluginServiceImpl implements PluginService {
      */
     @Override
     public List<KV<String, String[]>> pluginsIds(Class<? extends PluginTypeInterface> type) {
-        PluginRegistry pluginRegistry = pluginRegistryInstance();
         List<PluginInterface> plugins = pluginRegistry.getPlugins(type);
         List<KV<String, String[]>> resList = new ArrayList<>();
         for (PluginInterface plugin : plugins) {

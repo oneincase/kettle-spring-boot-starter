@@ -1,0 +1,242 @@
+[
+  {
+    "accessTypeCode": "Native",
+    "accessTypeDesc": "Native (JDBC)",
+    "option": {
+      "common": [
+        {
+          "label": "主机名称",
+          "field": "host",
+          "method": "setHostname",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "数据库名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "端口号",
+          "field": "port",
+          "method": "setDBPort",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "用户名",
+          "field": "user",
+          "method": "setUsername",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "密码",
+          "field": "pass",
+          "method": "setPassword",
+          "type": "password",
+          "value": "",
+          "require": false
+        }
+      ],
+      "Oracle": [
+        {
+          "label": "主机名称",
+          "field": "host",
+          "method": "setHostname",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "数据库名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "端口号",
+          "field": "port",
+          "method": "setDBPort",
+          "type": "input",
+          "value": "1521",
+          "require": false
+        },
+        {
+          "label": "表空间",
+          "field": "tableSpace",
+          "method": "setDataTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "索引空间",
+          "field": "indexSpace",
+          "method": "setIndexTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "用户名",
+          "field": "user",
+          "method": "setUsername",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "密码",
+          "field": "pass",
+          "method": "setPassword",
+          "type": "password",
+          "value": "",
+          "require": false
+        }
+      ]
+    }
+  },
+  {
+    "accessTypeCode": "ODBC",
+    "accessTypeDesc": "ODBC",
+    "option": {
+      "common": [
+        {
+          "label": "ODBC DSN源名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "用户名",
+          "field": "user",
+          "method": "setUsername",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "密码",
+          "field": "pass",
+          "method": "setPassword",
+          "type": "password",
+          "value": "",
+          "require": false
+        }
+      ],
+      "Oracle": [
+        {
+          "label": "ODBC DSN源名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "表空间",
+          "field": "tableSpace",
+          "method": "setDataTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "索引空间",
+          "field": "indexSpace",
+          "method": "setIndexTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "用户名",
+          "field": "user",
+          "method": "setUsername",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "密码",
+          "field": "pass",
+          "method": "setPassword",
+          "type": "password",
+          "value": "",
+          "require": false
+        }
+      ]
+    }
+  },
+  {
+    "accessTypeCode": "OCI",
+    "accessTypeDesc": "OCI",
+    "option": {
+    }
+  },
+  {
+    "accessTypeCode": "Plugin",
+    "accessTypeDesc": "插件专用访问方法",
+    "option": {
+    }
+  },
+  {
+    "accessTypeCode": "JNDI",
+    "accessTypeDesc": "JNDI",
+    "option": {
+      "common": [
+        {
+          "label": "JNDI 名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        }
+      ],
+      "ORACLE": [
+        {
+          "label": "JNDI 名称",
+          "field": "db",
+          "method": "setDBName",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "表空间",
+          "field": "tableSpace",
+          "method": "setDataTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        },
+        {
+          "label": "索引空间",
+          "field": "indexSpace",
+          "method": "setIndexTablespace",
+          "type": "input",
+          "value": "",
+          "require": false
+        }
+      ]
+    }
+  },
+  {
+    "accessTypeCode": ",",
+    "accessTypeDesc": "自定义",
+    "option": {
+    }
+  }
+]

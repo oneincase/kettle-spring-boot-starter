@@ -19,4 +19,9 @@ public interface DataBaseService {
      */
     List<KV<String, String>> accessTypeList(String pluginId);
 
+    /**
+     * Read File database-ui.json
+     */
+    String jsonStrForDatabaseUi();
+
 }
