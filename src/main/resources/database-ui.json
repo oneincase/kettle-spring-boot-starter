@@ -6,40 +6,35 @@
       "common": [
         {
           "label": "主机名称",
-          "field": "host",
-          "method": "setHostname",
+          "field": "hostname",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "数据库名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "端口号",
-          "field": "port",
-          "method": "setDBPort",
+          "field": "databasePortNumberString",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "用户名",
-          "field": "user",
-          "method": "setUsername",
+          "field": "username",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "密码",
-          "field": "pass",
-          "method": "setPassword",
+          "field": "password",
           "type": "password",
           "value": "",
           "require": false
@@ -48,56 +43,49 @@
       "Oracle": [
         {
           "label": "主机名称",
-          "field": "host",
-          "method": "setHostname",
+          "field": "hostname",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "数据库名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "端口号",
-          "field": "port",
-          "method": "setDBPort",
+          "field": "databasePortNumberString",
           "type": "input",
           "value": "1521",
           "require": false
         },
         {
           "label": "表空间",
-          "field": "tableSpace",
-          "method": "setDataTablespace",
+          "field": "dataTablespace",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "索引空间",
-          "field": "indexSpace",
-          "method": "setIndexTablespace",
+          "field": "indexTablespace",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "用户名",
-          "field": "user",
-          "method": "setUsername",
+          "field": "username",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "密码",
-          "field": "pass",
-          "method": "setPassword",
+          "field": "password",
           "type": "password",
           "value": "",
           "require": false
@@ -112,24 +100,21 @@
       "common": [
         {
           "label": "ODBC DSN源名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "用户名",
-          "field": "user",
-          "method": "setUsername",
+          "field": "username",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "密码",
-          "field": "pass",
-          "method": "setPassword",
+          "field": "password",
           "type": "password",
           "value": "",
           "require": false
@@ -138,40 +123,35 @@
       "Oracle": [
         {
           "label": "ODBC DSN源名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "表空间",
-          "field": "tableSpace",
-          "method": "setDataTablespace",
+          "field": "dataTablespace",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "索引空间",
-          "field": "indexSpace",
-          "method": "setIndexTablespace",
+          "field": "indexTablespace",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "用户名",
-          "field": "user",
-          "method": "setUsername",
+          "field": "username",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "密码",
-          "field": "pass",
-          "method": "setPassword",
+          "field": "password",
           "type": "password",
           "value": "",
           "require": false
@@ -198,8 +178,7 @@
       "common": [
         {
           "label": "JNDI 名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
@@ -208,24 +187,21 @@
       "ORACLE": [
         {
           "label": "JNDI 名称",
-          "field": "db",
-          "method": "setDBName",
+          "field": "databaseName",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "表空间",
-          "field": "tableSpace",
-          "method": "setDataTablespace",
+          "field": "dataTablespace",
           "type": "input",
           "value": "",
           "require": false
         },
         {
           "label": "索引空间",
-          "field": "indexSpace",
-          "method": "setIndexTablespace",
+          "field": "indexTablespace",
           "type": "input",
           "value": "",
           "require": false

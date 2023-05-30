@@ -20,7 +20,7 @@ public class RepositoryTest extends BaseTest {
         dataBaseMeta.setAccessType(0);
         dataBaseMeta.setDatabaseType("MySQL");
         dataBaseMeta.setHostname("localhost");
-        dataBaseMeta.setDBName("lkr2");
+        dataBaseMeta.setDBName("lkr");
         dataBaseMeta.setDBPort("3306");
         dataBaseMeta.setUsername("root");
         dataBaseMeta.setPassword("123456");
@@ -43,7 +43,6 @@ public class RepositoryTest extends BaseTest {
         boolean test = kettleFileRepository.test();
         Assert.assertTrue(test);
     }
-
 
     public void fileRepTest2() throws KettleException {
 
