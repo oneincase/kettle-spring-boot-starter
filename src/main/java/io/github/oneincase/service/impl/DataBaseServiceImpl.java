@@ -3,6 +3,7 @@ package io.github.oneincase.service.impl;
 import io.github.oneincase.core.KV;
 import io.github.oneincase.service.DataBaseService;
 import io.github.oneincase.service.PluginService;
+import io.github.oneincase.service.dto.DataBaseDTO;
 import io.github.oneincase.utils.IOUtil;
 import org.pentaho.di.core.database.BaseDatabaseMeta;
 import org.pentaho.di.core.database.DatabaseInterface;
@@ -11,6 +12,7 @@ import org.pentaho.di.core.exception.KettlePluginException;
 import org.pentaho.di.core.plugins.DatabasePluginType;
 import org.pentaho.di.core.plugins.PluginInterface;
 import org.pentaho.di.core.plugins.PluginRegistry;
+import org.pentaho.platform.util.beans.BeanUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,21 @@ public class DataBaseServiceImpl implements DataBaseService {
 
     public DataBaseServiceImpl(PluginService pluginService) {
         this.pluginService = pluginService;
+    }
+
+    @Override
+    public DatabaseMeta dataBaseMetaSetValues(DataBaseDTO dataBaseDTO) {
+        DatabaseMeta databaseMeta = new DatabaseMeta();
+        databaseMeta.setAccessType(dataBaseDTO.getAccessType());
+        databaseMeta.setDatabaseType(dataBaseDTO.getDatabaseType());
+        DatabaseInterface databaseInterface = databaseMeta.getDatabaseInterface();
+        BeanUtil beanUtil = new BeanUtil(databaseInterface);
+        try {
+            beanUtil.setValues(dataBaseDTO.getProps());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return databaseMeta;
     }
 
     /**
